@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!{% endblock %}
+
+{% block body %}
+<section class="container">
+    <div class="row">
+        <div class="col">
+            {{ form_start(CreateArticle) }}
+                <fieldset class="mb-3">
+                    <legend>info</legend>
+                    {{ form_row(CreateArticle.title) }}
+                    {# {{ form_row(CreateArticle.date) }} #}
+                    {{ form_row(CreateArticle.article) }}
+                    {# {{ form_row(CreateArticle.user) }} #}
+                    {{ form_row(CreateArticle.valider) }}
+
+                    {# <button type="submit" class="btn btn-primary btn-lg">Register</button> #}
+                </fieldset>
+            {{ form_end(CreateArticle) }}
+        </div>
+    </div>
+</section>
+{% endblock %}

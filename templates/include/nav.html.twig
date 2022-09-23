@@ -1,4 +1,4 @@
-<header>
+<header class="fixed-top">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
       <a class="navbar-brand" href="#">Blog Symfony</a>
@@ -10,12 +10,18 @@
               <li class="nav-item">
                   <a class="nav-link" href="{{path('app_main')}}">Home</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{path('app_blog')}}">Blog</a>
+              </li>
               {% if (app.user)%}
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Mon compte</a>
+                  <a class="nav-link" href="{{path('app_user')}}">Mon compte</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{path('app_logout')}}">Me deconnecter</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{path('app_articles')}}">Creer un Articles</a>
                 </li>
               {% else %}
               <li class="nav-item">
