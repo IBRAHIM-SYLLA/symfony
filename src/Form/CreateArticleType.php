@@ -16,11 +16,18 @@ class CreateArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class)
-            // ->add('date', DateType::class)
-            ->add('article', TextType::class)
-            // ->add('user', IntegerType::class)
-            ->add('valider', SubmitType::class)
+            ->add('title', TextType::class, [
+                'attr' => [
+                'class' => 'form-control'
+            ]])
+            ->add('article', TextType::class, [
+                'attr' => [
+                'class' => 'form-control'
+            ]])
+            ->add('valider', SubmitType::class, [
+                'attr' => [
+                'class' => 'btn btn-primary btn-lg'
+            ]])
         ;
     }
 

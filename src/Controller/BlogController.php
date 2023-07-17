@@ -15,12 +15,13 @@ class BlogController extends AbstractController
     public function index(ArticlesRepository $articlesRepository, Request $request): Response
     {
         $articles= $articlesRepository->findBy([], ['date' => 'DESC']);
+        dump($articles);
         return $this->render('blog/index.html.twig', [ 'articles' => $articles,]);
     }
 
-    #[Route('/blog/detail/{id}', name: 'detail')]
+    #[Route('/blog/article/{id}', name: 'article')]
     public function SingleArticle(Articles $article): Response
     {
-        return $this->render('blog/detail.html.twig', compact('article'));
+        return $this->render('blog/article.html.twig', compact('article'));
     }
 }
